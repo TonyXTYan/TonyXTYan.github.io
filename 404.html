@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found</title>
+  <script>
+    // Project sites live at /<Repo>/ with the repo's own casing. Any other casing of a known one
+    // (e.g. /pencilmaps/privacy/) lands here, and is sent on to the right one.
+    (function () {
+      var sites = ["PencilMaps", "HeLab"];
+      var path = location.pathname;
+      var first = path.split("/")[1] || "";
+      for (var i = 0; i < sites.length; i++) {
+        if (first.toLowerCase() === sites[i].toLowerCase() && first !== sites[i]) {
+          location.replace("/" + sites[i] + path.slice(first.length + 1) + location.search + location.hash);
+          return;
+        }
+      }
+    })();
+  </script>
+  <style>
+    body { font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 48px 16px; text-align: center; background: #fff; color: #1d1d1f; }
+    @media (prefers-color-scheme: dark) { body { background: #0f1115; color: #f2f2f4; } a { color: #6ea8ff; } }
+  </style>
+</head>
+<body>
+  <h1>Page not found</h1>
+  <p><a href="/">tonyxtyan.github.io</a></p>
+</body>
+</html>
