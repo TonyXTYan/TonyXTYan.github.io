@@ -9,6 +9,7 @@ GitHub Pages user site, served at https://tonyxtyan.github.io/.
 | `/PencilMaps/support/` | App Store support URL |
 | `/PencilMaps/privacy/` | App Store privacy policy URL |
 | `/HeLab/` | Published from the HeLab repo's `gh-pages` branch |
+| `/SRKit/` | The Relativistic Navigator, published from the SRKit repo (GitHub Pages, Actions) |
 
 `404.html` sends any other casing of a project site's path (e.g. `/pencilmaps/privacy/`) to the right one, so the
 paths work case-insensitively. Add a project to its `sites` list when it gets a site.
