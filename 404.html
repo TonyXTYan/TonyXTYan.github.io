@@ -8,9 +8,14 @@
     // Project sites live at /<Repo>/ with the repo's own casing. Any other casing of a known one
     // (e.g. /pencilmaps/privacy/) lands here, and is sent on to the right one.
     (function () {
-      var sites = ["PencilMaps", "HeLab", "SRKit"];
+      var sites = ["PencilMaps", "HeLab", "SRKit", "Better-Timetable-for-AIP-2026"];
       var path = location.pathname;
       var first = path.split("/")[1] || "";
+      if (first.toLowerCase() === "aip2026") {
+        var rest = path.slice(first.length + 1) || "/";
+        location.replace("/Better-Timetable-for-AIP-2026" + rest + location.search + location.hash);
+        return;
+      }
       for (var i = 0; i < sites.length; i++) {
         if (first.toLowerCase() === sites[i].toLowerCase() && first !== sites[i]) {
           location.replace("/" + sites[i] + path.slice(first.length + 1) + location.search + location.hash);
